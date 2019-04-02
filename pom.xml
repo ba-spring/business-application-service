@@ -204,19 +204,15 @@
                           </includes>
                         </fileSet>
                         <fileSet>
-                          <directory>src/main/docker</directory>
-                          <outputDirectory>opt/jboss/</outputDirectory>
-                          <includes>
-                            <include>uid_entrypoint.sh</include>
-                          </includes>
-                        </fileSet>
-                        <fileSet>
                           <directory>../business-application-kjar/target/local-repository/maven</directory>
                           <outputDirectory>opt/jboss/.m2/repository</outputDirectory>
                         </fileSet>
                       </inline>
-                      <user>jboss:jboss:jboss</user>
                     </assembly>
+                    <env>
+                      <M2_HOME>/opt/jboss/.m2</M2_HOME>
+                      <JAVA_OPTIONS>-Dkie.maven.settings.custom=/opt/jboss/.m2/settings.xml -Dorg.guvnor.m2repo.dir=/opt/jboss/.m2/repository</JAVA_OPTIONS>
+                    </env>
                     <ports>
                       <port>8090</port>
                     </ports>
@@ -224,10 +220,7 @@
                       <run>chgrp -Rf root /opt/jboss &amp;&amp; chmod -Rf g+w /opt/jboss</run>
                       <run>chgrp -Rf root /deployments &amp;&amp; chmod -Rf g+w /deployments</run>
                     </runCmds>
-                    <env>
-                      <M2_HOME>/opt/jboss/.m2</M2_HOME>
-                      <JAVA_OPTION>-Dkie.maven.settings.custom=/opt/jboss/.m2/settings.xml -Dorg.guvnor.m2repo.dir=/opt/jboss/.m2/repository</JAVA_OPTION>
-                    </env>
+                    <user>jboss:jboss:jboss</user>
                   </build>
                 </image>
               </images>
