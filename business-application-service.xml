@@ -1,27 +1,11 @@
 <kie-server-state>
-  <controllers/>
+  <controllers>
+  </controllers>
   <configuration>
-    <configItems>
-      <config-item>
-        <name>org.kie.server.location</name>
-        <value>http://localhost:8090/rest/server</value>
-        <type>java.lang.String</type>
-      </config-item>
-      <config-item>
-        <name>org.kie.server.id</name>
-        <value>business-application-service</value>
-        <type>java.lang.String</type>
-      </config-item>
-      <config-item>
-        <name>org.kie.server.controller</name>
-        <value></value>
-        <type>java.lang.String</type>
-      </config-item>
-    </configItems>
   </configuration>
   <containers>
     <container>
-      <containerId>business-application-kjar-1_0-SNAPSHOT</containerId>
+      <containerId>business-application-kjar</containerId>
       <releaseId>
         <groupId>com.company</groupId>
         <artifactId>business-application-kjar</artifactId>
@@ -54,7 +38,7 @@
         </config-item>
       </configItems>
       <messages/>
-      <containerAlias>business-application-kjar</containerAlias>
+      <containerAlias>business-application</containerAlias>
     </container>
   </containers>
 </kie-server-state>

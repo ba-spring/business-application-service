@@ -76,5 +76,8 @@ else
 	files=( $pattern )
 	cd ${files[0]}
 	executable="$(ls  *target/*.jar | tail -n1)"
-	java -jar "$executable"
+	export KIESERVER_CONTROLLERS=ws://localhost:8080/business-central/websocket/controller
+	java -Dorg.kie.server.controller=${KIESERVER_CONTROLLERS} -Dorg.kie.server.startup.strategy=LocalContainersStartupStrategy -Dorg.kie.server.controller.user=donato -Dorg.kie.server.controller.pwd=donato -jar "$executable"
+	#java -Dorg.kie.server.controller.user=donato org.kie.server.controller.pwd=donato -jar "$executable" 
+	#java -jar "$executable" -Dorg.kie.server.controller.user=donato org.kie.server.controller.pwd=donato 
 fi
