@@ -5,18 +5,8 @@
   <configuration>
     <configItems>
       <config-item>
-        <name>org.kie.server.location</name>
-        <value>http://localhost:8090/rest/server</value>
-        <type>java.lang.String</type>
-      </config-item>
-      <config-item>
-        <name>org.kie.server.controller.pwd</name>
-        <value>donato</value>
-        <type>java.lang.String</type>
-      </config-item>
-      <config-item>
-        <name>org.kie.server.controller.user</name>
-        <value>donato</value>
+        <name>org.kie.server.controller</name>
+        <value>ws://localhost:8080/business-central/websocket/controller</value>
         <type>java.lang.String</type>
       </config-item>
       <config-item>
@@ -25,48 +15,21 @@
         <type>java.lang.String</type>
       </config-item>
       <config-item>
-        <name>org.kie.server.controller</name>
-        <value>ws://localhost:8080/business-central/websocket/controller</value>
+        <name>org.kie.server.controller.pwd</name>
+        <value>donato</value>
+        <type>java.lang.String</type>
+      </config-item>
+      <config-item>
+        <name>org.kie.server.location</name>
+        <value></value>
+        <type>java.lang.String</type>
+      </config-item>
+      <config-item>
+        <name>org.kie.server.controller.user</name>
+        <value>donato</value>
         <type>java.lang.String</type>
       </config-item>
     </configItems>
   </configuration>
-  <containers>
-    <container>
-      <containerId>business-application-kjar_1.0-SNAPSHOT</containerId>
-      <releaseId>
-        <groupId>com.company</groupId>
-        <artifactId>business-application-kjar</artifactId>
-        <version>1.0-SNAPSHOT</version>
-      </releaseId>
-      <status>STARTED</status>
-      <scanner>
-        <status>STOPPED</status>
-      </scanner>
-      <configItems>
-        <config-item>
-          <name>KBase</name>
-          <value></value>
-          <type>BPM</type>
-        </config-item>
-        <config-item>
-          <name>KSession</name>
-          <value></value>
-          <type>BPM</type>
-        </config-item>
-        <config-item>
-          <name>MergeMode</name>
-          <value>MERGE_COLLECTIONS</value>
-          <type>BPM</type>
-        </config-item>
-        <config-item>
-          <name>RuntimeStrategy</name>
-          <value>PER_PROCESS_INSTANCE</value>
-          <type>BPM</type>
-        </config-item>
-      </configItems>
-      <messages/>
-      <containerAlias>business-application-kjar</containerAlias>
-    </container>
-  </containers>
+  <containers/>
 </kie-server-state>

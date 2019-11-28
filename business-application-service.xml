@@ -1,11 +1,44 @@
 <kie-server-state>
   <controllers>
+    <string>ws://localhost:8080/business-central/websocket/controller</string>
   </controllers>
   <configuration>
+    <configItems>
+      <config-item>
+        <name>org.kie.server.controller</name>
+        <value>ws://localhost:8080/business-central/websocket/controller</value>
+        <type>java.lang.String</type>
+      </config-item>
+      <config-item>
+        <name>org.kie.server.id</name>
+        <value>business-application-service</value>
+        <type>java.lang.String</type>
+      </config-item>
+      <config-item>
+        <name>org.kie.server.controller.pwd</name>
+        <value>donato</value>
+        <type>java.lang.String</type>
+      </config-item>
+      <config-item>
+        <name>org.kie.server.location</name>
+        <value>http://localhost:8090/rest/server</value>
+        <type>java.lang.String</type>
+      </config-item>
+      <config-item>
+        <name>org.kie.server.controller.user</name>
+        <value>donato</value>
+        <type>java.lang.String</type>
+      </config-item>
+      <config-item>
+        <name>org.kie.server.startup.strategy</name>
+        <value>LocalContainersStartupStrategy</value>
+        <type>java.lang.String</type>
+      </config-item>
+    </configItems>
   </configuration>
   <containers>
     <container>
-      <containerId>business-application-kjar</containerId>
+      <containerId>business-application-kjar_1.0-SNAPSHOT</containerId>
       <releaseId>
         <groupId>com.company</groupId>
         <artifactId>business-application-kjar</artifactId>
@@ -38,7 +71,7 @@
         </config-item>
       </configItems>
       <messages/>
-      <containerAlias>business-application</containerAlias>
+      <containerAlias>business-application-kjar</containerAlias>
     </container>
   </containers>
 </kie-server-state>
